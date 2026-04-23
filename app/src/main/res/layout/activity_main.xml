@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/calculatorLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="#000000"
+        android:visibility="visible">
+
+        <TextView
+            android:id="@+id/display"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:background="#222222"
+            android:gravity="bottom|end"
+            android:padding="16dp"
+            android:text="0"
+            android:textColor="#FFFFFF"
+            android:textSize="48sp"
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="12sp"
+            app:autoSizeMaxTextSize="48sp"
+            app:autoSizeStepGranularity="2sp" />
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:columnCount="4"
+            android:rowCount="5">
+
+            <!-- Row 1 -->
+            <Button style="@style/CalcButton" android:text="C" android:textColor="#FF9800"/>
+            <Button style="@style/CalcButton" android:text="/" android:textColor="#FF9800"/>
+            <Button style="@style/CalcButton" android:text="*" android:textColor="#FF9800"/>
+            <Button style="@style/CalcButton" android:text="DEL" android:textColor="#FF9800"/>
+
+            <!-- Row 2 -->
+            <Button style="@style/CalcButton" android:text="7" />
+            <Button style="@style/CalcButton" android:text="8" />
+            <Button style="@style/CalcButton" android:text="9" />
+            <Button style="@style/CalcButton" android:text="-" android:textColor="#FF9800"/>
+
+            <!-- Row 3 -->
+            <Button style="@style/CalcButton" android:text="4" />
+            <Button style="@style/CalcButton" android:text="5" />
+            <Button style="@style/CalcButton" android:text="6" />
+            <Button style="@style/CalcButton" android:text="+" android:textColor="#FF9800"/>
+
+            <!-- Row 4 -->
+            <Button style="@style/CalcButton" android:text="1" />
+            <Button style="@style/CalcButton" android:text="2" />
+            <Button style="@style/CalcButton" android:text="3" />
+            <Button style="@style/CalcButton" android:text="=" android:backgroundTint="#FF9800"/>
+
+            <!-- Row 5 -->
+            <Button style="@style/CalcButton" android:layout_columnSpan="2" android:layout_width="0dp" android:text="0" />
+            <Button style="@style/CalcButton" android:text="." />
+            <Button style="@style/CalcButton" android:text="" android:visibility="invisible" android:layout_rowWeight="1" />
+
+        </GridLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/selectionLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:background="#000000"
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/btnDiscord"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="Discord"
+            android:backgroundTint="#5865F2" />
+
+        <Button
+            android:id="@+id/btnInstagram"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="Instagram"
+            android:backgroundTint="#E1306C" />
+    </LinearLayout>
+
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+</FrameLayout>
